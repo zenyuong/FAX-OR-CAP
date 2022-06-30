@@ -5,10 +5,11 @@ app = Flask(__name__)
 
 @app.route("/", methods=["POST"])
 def middle():
+    print('hi')
     print(request.json)
     url = request.json['url']
     response = realorfake(url)
-    print(response)
+    print(response) 
     return jsonify({"msg": response })
 
 

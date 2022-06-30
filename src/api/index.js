@@ -19,10 +19,15 @@ app.get("/", (req, res) => {
 app.post("/form", async (req, res) => {
   console.log(req.body);
   const url = req.body.url;
-  const response = await axios.post("http://localhost:2020/", { url: url });
-  console.log(response.data);
-  const msg = `${url} is ${response.data.msg}`;
-  return res.send(msg);
+  try {
+    const response = await axios.post("http://localhost:2020/", { url: url });
+    console.log(response.data);
+    const msg = `${url} is ${response.data.msg}`;
+    return res.send(msg);
+  } catch (e) {
+    console.log(e.message);
+    return res.end();
+  }
 });
 
 app.listen(PORT, () => {
