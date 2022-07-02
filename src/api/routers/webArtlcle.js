@@ -1,4 +1,4 @@
-const WebsiteResultRecordsSchema = require("../models/WebsiteResultRecords");
+const WebsiteResultRecords = require("../models/WebsiteResultRecords");
 const router = require("express").Router();
 const fs = require("fs");
 const axios = require("axios");
@@ -17,13 +17,48 @@ module.exports = () => {
     console.log(req.body);
     const url = req.body.url;
     try {
-      const response = await axios.post("http://localhost:2020/", { url: url });
-      console.log(response.data);
-      const msg = `${url} is ${response.data.msg}`;
-      return res.send(msg);
+      const webResultRecordCheck = await WebsiteResultRecords.findOne().where({
+        link: url,
+      });
+      console.log("nihao", webResultRecordCheck);
+      if (webResultRecordCheck === null) {
+        console.log("empty");
+
+        try {
+          const response = await axios.post(
+            "http://127.0.0.1:2020/web_article/results",
+            { url: url }
+          );
+          console.log(response.data);
+          const info = response.data;
+          info["searchCount"] = 1;
+          const msg = `${url} is ${info.label}`;
+          try {
+            const websiteResultRecord = await WebsiteResultRecords.create(info);
+            console.log(websiteResultRecord);
+          } catch (e) {
+            console.log(e.message);
+          }
+          return res.send(msg);
+        } catch (e) {
+          console.log(e.message);
+          return res.send(e.message);
+        }
+      } else {
+        console.log("hi");
+        try {
+          const updateCount = await WebsiteResultRecords.findByIdAndUpdate(
+            { _id: webResultRecordCheck._id },
+            { searchCount: webResultRecordCheck.searchCount + 1 }
+          );
+          console.log(updateCount);
+          return res.send(webResultRecordCheck);
+        } catch (e) {
+          console.log(e.message);
+        }
+      }
     } catch (e) {
       console.log(e.message);
-      return res.end();
     }
   });
 
