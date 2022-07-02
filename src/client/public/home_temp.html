@@ -13,6 +13,23 @@
     <title>Fax or Cap</title>
 </head>
 
+<style>
+    .floating { 
+    animation-name: floating;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }   
+}
+</style>
+
 <body style="background: #2F302F;">
 
     <div class="container-fluid h-25" id="top-banner"> 
@@ -83,7 +100,7 @@
 
         <div class="container-fluid row" style="color: #FFFCFC;" id="title">
             <div class="col-12 d-flex justify-content-center">
-                <h1 style="font-size:85px;">Fax or Cap?</h1>
+                <h1 class="floating" style="font-size:85px;">Fax or Cap?</h1>
             </div>
     
             <div class="col-12 d-flex justify-content-center">
