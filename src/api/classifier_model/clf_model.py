@@ -38,21 +38,22 @@ def stemming(content):
 
 # IMPORTING MODEL
 def load_model():
-    loaded_model = pickle.load(open('clf_model.sav', 'rb'))
+    loaded_model = pickle.load(open('./clf_model.sav', 'rb'))
 
     return loaded_model
 
-
 # IMPORT VECTORIZER
 def load_vectorizer():
-    loaded_vec = pickle.load(open('vectorizer.sav', 'rb'))
+    loaded_vec = pickle.load(open('./vectorizer.sav', 'rb'))
 
     return loaded_vec
 
 
 # MAIN FUNCTION: PREDICTION FUNCTION
-def make_prediction(model, vectorizer, input_text):
+def make_prediction(input_text):
 
+    model = load_model()
+    vectorizer= load_vectorizer()
     #Transform to DataFrame
     input_text = {'content':[input_text]}
     input_text = pd.DataFrame(input_text)

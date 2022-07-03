@@ -17,6 +17,10 @@ const websiteResultRecordsSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  searchCount: {
+    type: Number,
+    required: true,
+  },
   positiveWords: [String],
   negativeWords: [String],
   createdAt: {
