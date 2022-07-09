@@ -4,8 +4,6 @@ import WebArtlcle from "./pages/webArticle";
 import Home from "./pages/home/Home";
 import Landing from "./pages/landing/landingPage";
 
-
-
 function App() {
   return (
     <>

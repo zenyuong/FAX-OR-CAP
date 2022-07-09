@@ -9,6 +9,7 @@ export default function WebArticle() {
     setToggleResults(!toggleResults);
     console.log(URL.current?.value);
   }
+
   return (
     <>
       <Fragment>
