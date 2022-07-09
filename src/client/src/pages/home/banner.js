@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './banner.css';
 
 const darkBg = {
-    background : "#2F302F", 
+    background : "#2F302F" 
   }
 
 const whiteText = {

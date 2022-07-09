@@ -8,11 +8,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Banner from './banner'
 import Search from './search'
 
+const darkBg = {
+  background : "#2F302F", 
+  height : "100vh"
+}
 
 
 function Home() {
   return (
-    <body>
+    <body style={darkBg}>
       <Banner />
       <Search />
     </body>
