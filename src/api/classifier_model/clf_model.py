@@ -54,6 +54,7 @@ def make_prediction(input_text):
 
     model = load_model()
     vectorizer= load_vectorizer()
+    
     #Transform to DataFrame
     input_text = {'content':[input_text]}
     input_text = pd.DataFrame(input_text)

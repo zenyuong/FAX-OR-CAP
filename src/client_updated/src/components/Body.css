@@ -1,0 +1,92 @@
+.body-container{
+    text-align: center;
+    height: 600px;
+    position: relative;
+}
+
+.title{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.title p{
+    color: #ffff;
+    font-family: 'Space Mono', monospace;
+}
+
+.title p:first-child{
+    margin: 0;
+    font-size: 3.5rem;
+    font-weight: 700;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+        typing 3.5s steps(40, end),
+        blink-caret 1s step-end infinite;
+}
+
+.title p:last-child{
+    margin: 0.5rem 0 2rem;
+    font-size: 1.2rem;
+}
+
+.input-box{
+    position: absolute;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} 
+
+.fa-globe{
+    position: absolute;
+    left: 1.2%;
+    top: 20%;
+    color: grey;
+}
+
+.input-box input{
+    border-radius: 5px;
+    border: 3.5px solid grey;
+    padding: 0.6rem 2.5rem;
+    background-color: rgb(245, 245, 245);
+    font-size: 16px;
+}
+
+.input-box input:focus{
+    outline: none; 
+    border: 3.5px solid orange;
+}
+
+.input-box button{
+    color: rgb(190, 190, 190);
+    background-color: transparent;
+    margin-top: 1.4rem;
+    border-radius: 25px;
+    padding: 0.8rem 1.4rem;
+    border: 2px solid rgb(190, 190, 190);
+    font-size: 15px;
+}
+
+.input-box button:hover{
+    background-color: orange;
+    border: 2px solid orange;
+    color: #ffff;
+    cursor: pointer;
+}
+
+/* Animation */
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
