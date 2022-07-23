@@ -12,19 +12,21 @@ export default function Body() {
   };
 
   return (
-    <div className="body-container">
-      <div className="title">
-        <p>FAX or CAP?</p>
-        <p>Validate your news in seconds</p>
+    <>
+      <div className="body-container">
+        <div className="title">
+          <p>FAX or CAP?</p>
+          <p>Validate your news in seconds</p>
+        </div>
+        <div className="input-box">
+          <form onSubmit={handleSubmit}>
+            <input type="text" size={110} placeholder="Enter URL" ref={URL} />
+            <i className="fa-solid fa-globe fa-lg"></i>
+            <br />
+            <button type="submit">Check Validity</button>
+          </form>
+        </div>
       </div>
-      <div className="input-box">
-        <form onSubmit={handleSubmit}>
-          <input type="text" size={110} placeholder="Enter URL" ref={URL} />
-          <i className="fa-solid fa-globe fa-lg"></i>
-          <br />
-          <button type="submit">Check Validity</button>
-        </form>
-      </div>
-    </div>
+    </>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.css";
+import { Route, Routes } from "react-router-dom";
 
 // App Components
 import Header from "./components/Header";
@@ -11,7 +12,9 @@ function App() {
     <>
       <div className="container">
         <Header />
-        <Body />
+        <Routes>
+          <Route path="/" element={<Body />} />
+        </Routes>
         <Footer />
       </div>
     </>
