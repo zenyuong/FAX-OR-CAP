@@ -17,6 +17,8 @@ function initAPIServer() {
   app.use(express.json());
 
   app.get("/", (req, res) => {
+    console.log("hi");
+
     return res.end();
   });
 

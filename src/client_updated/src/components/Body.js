@@ -1,28 +1,30 @@
-import React from 'react'
-import './Body.css'
+import React, { useRef } from "react";
+import "./Body.css";
+import axios from "axios";
 
-function Body() {
+export default function Body() {
+  const URL = useRef();
 
-  const handleSubmit = (e)=> {
-    e.preventDefault()
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(URL.current?.value);
+    axios.get("http:localhost:1010/");
+  };
 
   return (
-    <div className='body-container'>
-      <div className='title'>
+    <div className="body-container">
+      <div className="title">
         <p>FAX or CAP?</p>
         <p>Validate your news in seconds</p>
       </div>
-      <div className='input-box'>
+      <div className="input-box">
         <form onSubmit={handleSubmit}>
-          <input type="text" size={110} placeholder='Enter URL'/>
+          <input type="text" size={110} placeholder="Enter URL" ref={URL} />
           <i class="fa-solid fa-globe fa-lg"></i>
-          <br/>
+          <br />
           <button>Check Validity</button>
         </form>
       </div>
     </div>
-  )
+  );
 }
-
-export default Body
