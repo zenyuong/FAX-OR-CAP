@@ -1,20 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
 
-// App Components
-import Header from './components/Header'
-import Body from './components/Body'
-import Footer from './components/Footer'
+import "./index.css";
 
-function App() {
-  return (
-    <div className='container'>
-      <Header/>
-      <Body/>
-      <Footer/>
-    </div>
-  )
-}
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-ReactDOM.render(<App /> , document.querySelector('#root'));
+root.render(<App />);

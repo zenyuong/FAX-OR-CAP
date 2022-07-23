@@ -20,9 +20,9 @@ export default function Body() {
       <div className="input-box">
         <form onSubmit={handleSubmit}>
           <input type="text" size={110} placeholder="Enter URL" ref={URL} />
-          <i class="fa-solid fa-globe fa-lg"></i>
+          <i className="fa-solid fa-globe fa-lg"></i>
           <br />
-          <button>Check Validity</button>
+          <button type="submit">Check Validity</button>
         </form>
       </div>
     </div>
