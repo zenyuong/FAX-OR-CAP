@@ -1,10 +1,13 @@
 import React from "react";
 import "./index.css";
-import { Route, Routes } from "react-router-dom";
+// import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom';
 
 // App Components
 import Header from "./components/Header";
-import Body from "./components/Body";
+import BodyURL from "./components/BodyURL";
+import BodyTweets from "./components/BodyTweets";
+import BodyHome from "./components/BodyHome";
 import Footer from "./components/Footer";
 
 function App() {
@@ -13,7 +16,9 @@ function App() {
       <div className="container">
         <Header />
         <Routes>
-          <Route path="/" element={<Body />} />
+          <Route path="/" element={<BodyHome/>} />
+          <Route path="/url" element={<BodyURL />} />
+          <Route path="/tweets" element={<BodyTweets />} />
         </Routes>
         <Footer />
       </div>

@@ -4,13 +4,15 @@
     position: relative;
 }
 
-.title{
+/* TITLE */
+.body-icon,.title{
     position: absolute;
-    top: 35%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.title p{
+
+.title p, .twitter-inactive, .globe-inactive{
     color: #ffff;
     font-family: 'Space Mono', monospace;
 }
@@ -30,18 +32,54 @@
 }
 
 .title p:last-child{
-    margin: 0.5rem 0 2rem;
+    margin: 0.5rem 0 2rem 0;
     font-size: 1.2rem;
 }
 
-.input-box{
+/* HOMEPAGE ICONS */
+.body-main-icons{
     position: absolute;
     top: 56%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: flex;
+}
+
+.body-main-icons div{
+    margin: 0 2.4rem;
+}
+
+/* INDV PAGE ICONS */
+.body-icons{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.body-icons.twitter{
+    top: 27%;
+}
+
+.twitter-active{
+    color: #00acee;
+    font-family: 'Space Mono', monospace;
+}
+
+.globe-active{
+    color:rgb(17, 142, 17);
+    font-family: 'Space Mono', monospace;
+}
+
+/* INPUT BOX */
+.input-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 } 
 
-.fa-globe{
+.fa-solid{
     position: absolute;
     left: 1.2%;
     top: 20%;
@@ -56,9 +94,22 @@
     font-size: 16px;
 }
 
-.input-box input:focus{
+.input-box-url:focus{
     outline: none; 
-    border: 3.5px solid orange;
+    border: 3.5px solid rgb(17, 142, 17);
+}
+
+.input-box-url:focus + i{
+    color: rgb(17, 142, 17);
+}
+
+.input-box-tweet:focus{
+    outline: none; 
+    border: 3.5px solid #00acee;
+}
+
+.input-box-tweet:focus + i{
+    color: #00acee;
 }
 
 .input-box button{
