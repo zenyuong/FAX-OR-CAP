@@ -26,21 +26,21 @@ For the common person, discerning real from fake news comes down solely to their
 ## Application Walkthrough
 
 ### User Scenario 1: User wants to check the validity of a news piece
-1. User starts from the landing page 
-**Insert Landing Page here**
-2. User clicks on the fake news detection icon
-**Insert user clicking on Fake News Icon**
-3. User inserts the HTML link of their choice into the input box
-**Insert picture of user adding in a link into the input box**
-4. The user gets greeted with a results page with whether the new is reliable along with keywords that might contribute to the result
-**Insert result page**
+1. User starts from the landing page   
+**Insert Landing Page here**  
+2. User clicks on the fake news detection icon  
+**Insert user clicking on Fake News Icon**  
+3. User inserts the HTML link of their choice into the input box  
+**Insert picture of user adding in a link into the input box**  
+4. The user gets greeted with a results page with whether the new is reliable along with keywords that might contribute to the result  
+**Insert result page**  
 
 ### User Scenario 2: User checks for the sentiment analysis of a tweet
-1. User starts from the landing page and wants to find the general sentiment of a particular hashtag
-**Insert Landing Page here**
-2. User clicks on the Twitter Icon
-**Insert user clicking on Twitter Icon**
-3. User inserts the hashtag of their choice into the input box
-**Insert picture of user adding in a hashtag into the input box**
-4. The user gets greeted with a results page with infomation on whether the sentiment on the tweet.
-**Insert result page**
+1. User starts from the landing page and wants to find the general sentiment of a particular hashtag  
+**Insert Landing Page here**  
+2. User clicks on the Twitter Icon  
+**Insert user clicking on Twitter Icon**  
+3. User inserts the hashtag of their choice into the input box  
+**Insert picture of user adding in a hashtag into the input box**  
+4. The user gets greeted with a results page with infomation on whether the sentiment on the tweet  
+**Insert result page**  
