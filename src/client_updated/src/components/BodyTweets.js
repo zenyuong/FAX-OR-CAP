@@ -37,7 +37,7 @@ export default function BodyTweets() {
         <div className="input-box">
           <form onSubmit={handleSubmit}>
             <input className="input-box-tweet" type="text" size={80} placeholder="Enter Hashtag" ref={URL} />
-            <i class="fa-solid fa-hashtag fa-lg"></i>
+            <i className="fa-solid fa-hashtag fa-lg"></i>
             <br />
             <button type="submit">Check Validity</button>
           </form>

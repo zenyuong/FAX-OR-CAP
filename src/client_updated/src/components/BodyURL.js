@@ -37,7 +37,7 @@ export default function BodyURL() {
         <div className="input-box">
           <form onSubmit={handleSubmit}>
             <input className="input-box-url" type="text" size={80} placeholder="Enter URL" ref={URL} />
-            <i class="fa-solid fa-link fa-lg"></i>
+            <i className="fa-solid fa-link fa-lg"></i>
             <br />
             <button type="submit">Check Validity</button>
           </form>
