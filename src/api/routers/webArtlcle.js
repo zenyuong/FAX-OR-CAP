@@ -13,9 +13,11 @@ module.exports = () => {
     return res.end();
   });
 
-  router.post("/form", async (req, res) => {
+  router.post("/action", async (req, res) => {
     console.log(req.body);
-    const url = req.body.url;
+    const request = JSON.parse(req.body.body);
+    const url = request.URL;
+    console.log(url);
     try {
       const webResultRecordCheck = await WebsiteResultRecords.findOne().where({
         link: url,

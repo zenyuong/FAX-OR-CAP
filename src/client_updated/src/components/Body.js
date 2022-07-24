@@ -7,8 +7,14 @@ export default function Body() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(URL.current?.value);
-    axios.get("http:localhost:1010/");
+    const Link = URL.current?.value;
+    axios
+      .post("http://localhost:1010/article/action", {
+        body: JSON.stringify({ URL: Link }),
+      })
+      .then((res) => {
+        console.log(res);
+      });
   };
 
   return (
