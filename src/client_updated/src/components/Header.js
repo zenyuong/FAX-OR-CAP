@@ -4,17 +4,22 @@ import './Header.css'
 const menuItems = [
   {
     title: "Home",
-    url: "#",
+    url: "/",
+    className: "nav-links"
+  },
+  {
+    title: "URL",
+    url: "/url",
+    className: "nav-links"
+  },
+  {
+    title: "Tweets",
+    url: "/tweets",
     className: "nav-links"
   },
   {
     title: "Queries", 
-    url: "#",
-    className: "nav-links"
-  },
-  {
-    title: "Contact",
-    url: "#",
+    url: "/queries",
     className: "nav-links"
   }
 ]
