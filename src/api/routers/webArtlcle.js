@@ -1,7 +1,7 @@
 const WebsiteResultRecords = require("../models/WebsiteResultRecords");
-const router = require("express").Router();
 const fs = require("fs");
 const axios = require("axios");
+const router = require("express").Router();
 
 module.exports = () => {
   router.get("/hi", (req, res) => {

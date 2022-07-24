@@ -26,6 +26,8 @@ function initAPIServer() {
 
   app.use("/article", require("./routers/webArtlcle")());
 
+  app.use("/twitter", require("./routers/twitterAPI")());
+
   let listener = app.listen(process.env.PORT || 1010, () => {
     console.log(`[API Server Listening on ${listener.address().port}]`);
   });
