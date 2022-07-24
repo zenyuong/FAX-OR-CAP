@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from clf_model import *
 from beautifulsoup import * 
+import json
 
 
 app = Flask(__name__)
@@ -16,8 +17,42 @@ def middle():
         'title': title, 
         'originalText': originalText, 
         'text': text, 
-        'label': make_prediction(text)
+        'label': make_prediction(text),
+        'markedText': ''
     }
+
+    if msg['label'] == "Unreliable News":
+        marked_text = ''
+
+        file = open('unreliable.json', 'r')
+        unreliable_words = json.load(file)['words']
+
+        org_word_list = msg['originalText'].split(' ')
+
+        for org_word in org_word_list:
+            if org_word in unreliable_words:
+                marked_text += " <mark>" + org_word + "</mark>"
+
+            else:
+                marked_text += " " + org_word
+
+    else:
+        marked_text = ''
+
+        file = open('reliable.json', 'r')
+        reliable_words = json.load(file)['words']
+
+        org_word_list = msg['originalText'].split(' ')
+
+        for org_word in org_word_list:
+            if org_word in reliable_words:
+                marked_text += " <mark>" + org_word + "</mark>"
+
+            else:
+                marked_text += " " + org_word
+
+
+    msg['markedText']  = marked_text
 
     return jsonify(msg)
 
