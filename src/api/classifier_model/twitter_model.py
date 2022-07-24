@@ -40,7 +40,7 @@ def load_twitter_model():
 
 # === LOAD TOKENIZER ===
 def load_tokenizer():
-    loaded_tokenizer = pickle.load(open('./twitter_tokenizer', 'rb'))
+    loaded_tokenizer = pickle.load(open('./twitter_tokenizer.sav', 'rb'))
 
     return loaded_tokenizer
 
