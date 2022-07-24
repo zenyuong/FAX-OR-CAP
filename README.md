@@ -11,9 +11,15 @@ For the common person, discerning real from fake news comes down solely to their
 ### Architectural Overview
 
 ### Tech-Stack
+1. Languages used
+    - Python
+    - Javascript
+2. React
+3. TensorFlow
+4. Keras
 
 ## Application Walkthrough
 
 ### User Scenario 1: User wants to check the validity of a news piece
 
-## User Scenario 2: User checks for the sentiment analysis of a tweet
+### User Scenario 2: User checks for the sentiment analysis of a tweet
