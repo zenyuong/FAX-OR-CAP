@@ -25,7 +25,7 @@ import pickle
 STOPWORDS = stopwords.words('english')
 
 
-# HELPER FUNCTION #1: STEMMING FUNCTION 
+# === HELPER FUNCTION #1: STEMMING FUNCTION === 
 def stemming(content):
     port_stem = PorterStemmer()
     review = re.sub('[^a-zA-Z]',' ',content)
@@ -36,37 +36,37 @@ def stemming(content):
     return review
 
 
-# IMPORTING MODEL
+# === IMPORTING MODEL ===
 def load_model():
     loaded_model = pickle.load(open('./clf_model.sav', 'rb'))
 
     return loaded_model
 
-# IMPORT VECTORIZER
+# === IMPORT VECTORIZER ===
 def load_vectorizer():
     loaded_vec = pickle.load(open('./vectorizer.sav', 'rb'))
 
     return loaded_vec
 
 
-# MAIN FUNCTION: PREDICTION FUNCTION
+# === MAIN FUNCTION: PREDICTION FUNCTION ===
 def make_prediction(input_text):
 
     model = load_model()
     vectorizer= load_vectorizer()
     
-    #Transform to DataFrame
+    # === Transform to DataFrame === 
     input_text = {'content':[input_text]}
     input_text = pd.DataFrame(input_text)
     
-    #Stem input text
+    # === Stem input text ===
     input_text['content'] = input_text['content'].apply(stemming)
     stemmed_text = input_text['content']
 
-    #Vectorize 
+    # === Vectorize ===
     vec_text = vectorizer.transform(stemmed_text)
 
-    #Predict
+    # === Predict ===
     pred = model.predict(vec_text)
 
     if pred == 0:
