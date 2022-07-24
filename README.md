@@ -9,7 +9,7 @@ For the common person, discerning real from fake news comes down solely to their
 ## Technical Specification
 
 ### Architectural Overview
-
+![Architecture Diagram](User Input.jpeg)
 ### Tech-Stack
 1. Languages used
     - Python
