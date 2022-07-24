@@ -9,9 +9,13 @@ const websiteResultRecordsSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  main_text: {
+  originalText: {
     type: String,
     default: "Main Text Unavailable",
+  },
+  text: {
+    type: String,
+    default: "Processed text Unavailable",
   },
   label: {
     type: String,

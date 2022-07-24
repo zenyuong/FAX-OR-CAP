@@ -12,8 +12,10 @@ def wordopt(url):
     print("----")
     rows = soup.find_all('p')
     text = ""
+    originalText= ""
     for row in rows:
         text += row.get_text()
+        originalText += row.get_text()
 
     text = text.lower()
     text = re.sub('\[.*?\]', '', text)
@@ -23,4 +25,9 @@ def wordopt(url):
     text = re.sub('[%s]' % re.escape(string.punctuation), '', text)
     text = re.sub('\n', '', text)
     text = re.sub('\w*\d\w*', '', text)  
-    return (title, text)
+
+    originalText = re.sub('\n', '', originalText)
+    originalText = re.sub('  ', ' ', originalText)
+
+    print(originalText)
+    return (title, originalText, text)

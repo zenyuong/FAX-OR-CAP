@@ -35,12 +35,8 @@ module.exports = () => {
           const info = response.data;
           info["searchCount"] = 1;
           const msg = `${url} is ${info.label}`;
-          try {
-            const websiteResultRecord = await WebsiteResultRecords.create(info);
-            console.log(websiteResultRecord);
-          } catch (e) {
-            console.log(e.message);
-          }
+          const websiteResultRecord = await WebsiteResultRecords.create(info);
+          console.log(websiteResultRecord);
           return res.send(msg);
         } catch (e) {
           console.log(e.message);
