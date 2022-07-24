@@ -15,4 +15,5 @@ For the common person, discerning real from fake news comes down solely to their
 ## Application Walkthrough
 
 ### User Scenario 1: User wants to check the validity of a news piece
- 
+
+## User Scenario 2: User checks for the sentiment analysis of a tweet
