@@ -36,7 +36,7 @@ For the common person, discerning real from fake news comes down solely to their
 
 ## Application Walkthrough
 ### Installing the appropriate libraries
-To begin installing all the requirements that we would need for the web application to work, simply use the following command  
+To begin installing all the requirements that we would need for the web application to work, simply execute the following command in the terminal of your IDE:
 ```
 pip install -r requirements.txt
 ```  
