@@ -20,7 +20,6 @@ function initAPIServer() {
 
   app.get("/", (req, res) => {
     console.log("hi");
-
     return res.end();
   });
 

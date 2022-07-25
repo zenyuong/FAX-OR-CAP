@@ -1,47 +1,42 @@
-import React, { useRef, useState } from "react";
+import React, {useRef, useState} from "react";
+import { Toaster, toast } from 'react-hot-toast';
+// import "./Body.css";
 import "./Body.css";
 import axios from "axios";
 
 export default function BodyURL() {
   const URL = useRef();
-  const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState(null)
 
-  // CALL TO NODE.JS
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const Link = URL.current?.value;
-    setLoading(true);
-    let cancel;
-
     axios
       .post("http://localhost:1010/article/action", {
         method: "POST",
-        body: JSON.stringify({ URL: Link }),
-        cancelToken: new axios.CancelToken((c) => {
-          cancel = c;
-        }),
+        body: JSON.stringify({ URL: Link })
       })
       .then((res) => {
-        setLoading(false);
-        console.log(res);
-      });
-    return () => cancel();
+          toast.success("Success!", {duration: 1500});
+          console.log(res)
+          setResult(res.data)
+        }
+      )
+      .catch((res) => {
+          toast.error("Oops, something went wrong!", {duration: 1500});
+          console.log(res)
+        }
+      )
   };
-
-  if (loading) return "loading...";
 
   return (
     <>
-      <div className="body-container">
-<<<<<<< Updated upstream
-        <div className="body-icons">
-          <img src="globe.png" alt="globe" width="130" height="130" />
-=======
-        <div className="body-icons globe">
+      <div className={"body-container"}>
+        <Toaster/>
+        <div className={"body-icons globe"}>
           <img src="globe.png" alt="globe" width="130" height="130"/>
->>>>>>> Stashed changes
         </div>
-        <div className="input-box">
+        <div className={"input-box"}>
           <form onSubmit={handleSubmit}>
             <input
               className="input-box-url"
@@ -55,6 +50,18 @@ export default function BodyURL() {
             <button type="submit">Check Validity</button>
           </form>
         </div>
+        <div className={'body-content'}>
+            <h1 className={'label'}>
+              Hello
+              {result.label}
+            </h1>
+            <h3 className={'count'}>
+              Search Count: {result.searchCount}
+            </h3>
+            <h3 className={'news-title'}>
+              Title: {result.title}
+            </h3>
+          </div>
       </div>
     </>
   );

@@ -133,6 +133,29 @@
     cursor: pointer;
 }
 
+/* BODY CONTENT */
+.body-content{
+    position: absolute;
+    top: 76%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffff;
+    width: 700px;
+}
+
+.label{
+    color: rgb(226, 219, 30);
+    font-family: 'Space Mono', monospace;
+}
+
+.count{
+    color: rgb(166, 166, 166);
+}
+
+.news-title{
+    font-style: italic;
+}
+
 /* Animation */
 
 @keyframes typing {
