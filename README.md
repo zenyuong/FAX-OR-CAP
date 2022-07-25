@@ -10,27 +10,27 @@ For the common person, discerning real from fake news comes down solely to their
 ![Architecture Diagram](https://github.com/zenyuong/HEAP-IS-FAKE-NEWS-/blob/0f1111a0a5db61902d2b0d8009c09e8bfd99bc24/User%20Input.jpeg)
 ### Tech-Stack
 1. Languages used
-    - Python
-    - Javascript
+    - **Python**
+    - **Javascript**
 2. Frontend
-    - ReactJS  
+    - **ReactJS**  
     ReactJS is an open-source JavaScript library that is used for building user interfaces specifically for single-page applications. React also allows us to create reusable UI components. React allowed us to create a large web applications that can change data, without reloading the page thus giving it a sense of versatility. Additionally, the main purpose of React is to be fast, scalable, and simple.
-    - HTML
-    - CSS
+    - **HTML**
+    - **CSS**
 3. Backend
-    - NodeJS  
-    - ExpressJS  
+    - **NodeJS**  
+    - **ExpressJS**  
     Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. It main benefit comes from it being small and robust enough for HTTP servers hence making it a great solution for single page applications, websites or applications. 
-    - Flask  
+    - **Flask**  
     Flask is a lightweight web development framework for Python. It does not require any particular tools or libraries. We primarily used Flask as a way for our web application to interact with the Machine Learning Models which were written in Flask. 
-    - MongoDB  
+    - **MongoDB**  
     MongoDB is a source-available, cross-platform, document-oriented database platform. It is classified as a NoSQl database program. For our web applications, MongoDB was uses as our main database to store vital information about news articles.
 4. Machine Learning Model
-    - Tensorflow  
+    - **Tensorflow**  
     TensorFlow is a free and open-source software library for machine learning and artificial intelligence. For this project, it was primarily used for its text preprocessing capabilities along with its interfaces for training in deep neural networks.
-    - Scikit-learn  
+    - **Scikit-learn**  
     Scikit-learn is a free software machine learning library for the Python programming language. In this project, the classification library provided to determine the validity of a new article. 
-    - Keras  
+    - **Keras**  
     Keras is an open-source software library that provides a Python interface for artificial neural networks. Keras acts as a interface for the TensorFlow library.
 
 
