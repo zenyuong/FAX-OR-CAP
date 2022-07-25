@@ -7,7 +7,7 @@ For the common person, discerning real from fake news comes down solely to their
 
 
 ### Architectural Overview
-![Architecture Diagram](https://github.com/zenyuong/HEAP-IS-FAKE-NEWS-/blob/0f1111a0a5db61902d2b0d8009c09e8bfd99bc24/User%20Input.jpeg)
+![Architecture Diagram](https://github.com/zenyuong/HEAP-IS-FAKE-NEWS-/blob/691d63c4dfe365b8ae0cfa9c75385ff1d86fe8ae/User%20Input.jpeg)
 ### Tech-Stack
 1. Languages used
     - **Python**
