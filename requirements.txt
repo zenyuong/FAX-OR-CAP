@@ -1,0 +1,24 @@
+# Downlaod Flask Module
+Flask
+
+# Download Machine Learning Modules
+
+# Beautiful Soup
+bs4
+
+# TensorFlow
+tensorflow
+
+# Keras
+keras
+Keras-Preprocessing
+
+# nltk
+nltk
+
+# Pandas
+pandas
+
+# scikit learn
+scikit-learn
+
