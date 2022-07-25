@@ -28,6 +28,8 @@ export default function BodyTweets() {
     return () => cancel();
   };
 
+  if (loading) return "loading...";
+
   return (
     <>
       <div className="body-container">

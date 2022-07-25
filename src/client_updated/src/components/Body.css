@@ -49,6 +49,10 @@
     margin: 0 2.4rem;
 }
 
+.globe-icon p{
+    margin-top: 22px;
+}
+
 /* INDV PAGE ICONS */
 .body-icons{
     position: absolute;

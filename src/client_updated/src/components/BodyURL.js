@@ -33,8 +33,13 @@ export default function BodyURL() {
   return (
     <>
       <div className="body-container">
+<<<<<<< Updated upstream
         <div className="body-icons">
           <img src="globe.png" alt="globe" width="130" height="130" />
+=======
+        <div className="body-icons globe">
+          <img src="globe.png" alt="globe" width="130" height="130"/>
+>>>>>>> Stashed changes
         </div>
         <div className="input-box">
           <form onSubmit={handleSubmit}>
