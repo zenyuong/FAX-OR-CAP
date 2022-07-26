@@ -40,6 +40,26 @@ To begin installing all the requirements that we would need for the web applicat
 ```
 pip install -r requirements.txt
 ```  
+### Starting the application
+To get the application up and working you'll have to run three files on three separate terminals,   
+
+1. Flask file: middle.py  
+``` 
+cd src/api/classifier_model/
+python3 middle.py 
+```
+
+2. React file: App,js  
+```
+cd src/client_updated/src/
+npm start
+```
+
+3. Express file: Index.js  
+```
+cd src/api
+node index.js
+```
 ### User Scenario 1: User wants to check the validity of a news piece
 1. User starts from the landing page   
 **Insert Landing Page here**  

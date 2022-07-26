@@ -150,14 +150,12 @@
 /* BODY CONTENT */
 .body-content{
     position: absolute;
-    top: 76%;
+    top: 77%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #ffff;
-    width: 700px;
+    width: 750px;
 }
-
-/* BODY CONTENT */
 
 .label,.sentiment{
     color: rgb(226, 219, 30);
@@ -172,7 +170,16 @@
     font-style: italic;
 }
 
+.tweets{
+    margin: auto;
+    width: 720px;
+}
 
+.tweets p{
+    font-size: 1rem;
+    font-style: italic;
+    color: silver;
+}
 
 /* Animation */
 
