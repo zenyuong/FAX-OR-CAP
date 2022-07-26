@@ -15,15 +15,19 @@ export default function BodyURL() {
         method: "POST",
         body: JSON.stringify({ URL: Link })
       })
-      .then((res) => {
+      .then(res => {
           toast.success("Success!", {duration: 1500});
-          console.log(res)
-          setResult(res.data)
+          res.json()
         }
       )
-      .catch((res) => {
+      .then(output => {
+        console.log(output)
+        setResult(output.data)
+        }
+      )
+      .catch(err => {
           toast.error("Oops, something went wrong!", {duration: 1500});
-          console.log(res)
+          console.log(err)
         }
       )
   };
