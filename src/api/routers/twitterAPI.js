@@ -32,8 +32,9 @@ module.exports = () => {
       //   tweetList: tweetList,
       // });
       // console.log(response.data);
-
-      return res.send(tweetList);
+      const sentiment = "Happy";
+      const response = { tweetList: tweetList, sentiment: sentiment };
+      return res.send(JSON.stringify(response));
     } catch (e) {
       console.log(e.message);
       return res.send(e.message);
