@@ -57,7 +57,7 @@ export default function BodyURL() {
             <input
               className={"input-box-url"}
               type="text"
-              size={80}
+              size={90}
               placeholder="Enter URL"
               ref={URL}
               value={inputValue}

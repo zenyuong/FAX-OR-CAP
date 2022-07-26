@@ -64,7 +64,7 @@ export default function BodyTweets() {
             <input
               className={"input-box-tweet"}
               type="text"
-              size={80}
+              size={90}
               placeholder="Enter Hashtag"
               ref={hashtag}
               value={inputValue}
