@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect} from "react";
 import { Toaster, toast } from 'react-hot-toast';
 import "./Body.css";
 import axios from "axios";
@@ -7,6 +7,10 @@ export default function BodyTweets() {
   const hashtag = useRef();
   const [result, setResult] = useState([])
   const [inputValue, setInputValue] = useState("");
+
+  useEffect(() => {
+    setInputValue('')
+  },[result]);
 
   const handleClear = (e) => {
     setInputValue('');
