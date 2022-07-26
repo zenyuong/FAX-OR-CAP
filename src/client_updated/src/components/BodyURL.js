@@ -1,24 +1,12 @@
-import React, {useRef, useState, useEffect} from "react";
-import { Toaster, toast } from 'react-hot-toast';
+import React, { useRef, useState } from "react";
+import { Toaster, toast } from "react-hot-toast";
+// import "./Body.css";
 import "./Body.css";
 import axios from "axios";
 
 export default function BodyURL() {
   const URL = useRef();
-  const [result, setResult] = useState([])
-  const [inputValue, setInputValue] = useState(""); 
-
-  useEffect(() => {
-    setInputValue('')
-  },[result]);
-
-  const handleClear = (e) => {
-    setInputValue('');
-  }
-
-  const handleChange = (e) => {
-    setInputValue(e.target.value);
-  }
+  const [result, setResult] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,32 +14,25 @@ export default function BodyURL() {
     axios
       .post("http://localhost:1010/article/action", {
         method: "POST",
-        body: JSON.stringify({ URL: Link })
+        body: JSON.stringify({ URL: Link }),
       })
-      .then(res => {
-        if(res.data==='Request failed with status code 500'){
-          toast.error("Oops, something went wrong!", {duration: 1500});
-          console.log(res.data)
-        } else{
-            toast.success("Success!", {duration: 1500});
-            console.log(res.data)
-            setResult(res.data)
-          }
-        }
-      )
-      .catch(err => {
-          toast.error("Oops, something went wrong!", {duration: 1500});
-          console.log(err)
-        }
-      )
+      .then((res) => {
+        toast.success("Success!", { duration: 1500 });
+        console.log(res);
+        setResult(res.data);
+      })
+      .catch((res) => {
+        toast.error("Oops, something went wrong!", { duration: 1500 });
+        console.log(res);
+      });
   };
 
   return (
     <>
       <div className={"body-container"}>
-        <Toaster/>
+        <Toaster />
         <div className={"body-icons globe"}>
-          <img src="globe.png" alt="globe" width="130" height="130"/>
+          <img src="globe.png" alt="globe" width="130" height="130" />
         </div>
         <div className={"input-box"}>
           <form onSubmit={handleSubmit}>
@@ -70,16 +51,13 @@ export default function BodyURL() {
             <button type="submit">Check Validity</button>
           </form>
         </div>
-        <div className={'body-content'}>
-            <h1 className={'label'}>
-              {result.label}
-            </h1>
-            <h3 className={'count'}>
-              { result.searchCount !== undefined ? `Search Count: ${result.searchCount}` : "" }
-            </h3>
-            <h3 className={'news-title'}>
-              { result.title !== undefined ? `Title: ${result.title}` : "" }
-            </h3>
+        <div className={"body-content"}>
+          <h1 className={"label"}>
+            Hello
+            {result.label}
+          </h1>
+          <h3 className={"count"}>Search Count: {result.searchCount}</h3>
+          <h3 className={"news-title"}>Title: {result.title}</h3>
         </div>
       </div>
     </>
