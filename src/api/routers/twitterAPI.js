@@ -28,12 +28,13 @@ module.exports = () => {
       let tweetList = APIResponse.map((tweet) => tweet.text);
       console.log(tweetList);
 
-      let response = await axios.post("http://127.0.0.1:2020/twitter/results", {
-        tweetList: tweetList,
-      });
+      // let response = await axios.post("http://127.0.0.1:2020/twitter/results", {
+      //   tweetList: tweetList,
+      // });
 
-      console.log("response", response);
-      const sentiment = response.data;
+      // const sentiment = response.data;
+      const sentiment = "Happy";
+
       const resp = { tweetList: tweetList, sentiment: sentiment };
       return res.send(JSON.stringify(resp));
     } catch (e) {
