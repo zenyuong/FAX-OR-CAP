@@ -75,7 +75,6 @@ export default function BodyTweets() {
             <h1 className={'sentiment'}>
               Hello {result.label}
             </h1>
-
         </div>
       </div>
     </>

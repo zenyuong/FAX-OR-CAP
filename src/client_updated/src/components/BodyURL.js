@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Toaster, toast } from "react-hot-toast";
 // import "./Body.css";
 import "./Body.css";
@@ -6,7 +6,20 @@ import axios from "axios";
 
 export default function BodyURL() {
   const URL = useRef();
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState([]);
+  const [inputValue, setInputValue] = useState('')
+
+  useEffect(() => {
+    setInputValue('')
+  },[result]);
+
+  const handleClear = (e) => {
+    setInputValue('');
+  }
+
+  const handleChange = (e) => {
+    setInputValue(e.target.value);
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -53,11 +66,14 @@ export default function BodyURL() {
         </div>
         <div className={"body-content"}>
           <h1 className={"label"}>
-            Hello
             {result.label}
           </h1>
-          <h3 className={"count"}>Search Count: {result.searchCount}</h3>
-          <h3 className={"news-title"}>Title: {result.title}</h3>
+          <h3 className={"count"}>
+            {result.searchCount !== undefined ? `Search Count: ${result.searchCount}` : ''}
+          </h3>
+          <h3 className={"news-title"}>
+            {result.title !== undefined ? `Title: ${result.title}` : ''}
+          </h3>
         </div>
       </div>
     </>
