@@ -34,9 +34,9 @@ def preprocess(text, stem=False):
 # === LOAD SENTIMENT ANALYSIS MODEL ===
 def load_twitter_model():
     # === COMMENT THIS LINE OUT ===
-    loaded_model = pickle.load(open('./twitter_model.sav', 'rb'))
+    # loaded_model = pickle.load(open('./twitter_model.sav', 'rb'))
     # === UNCOMMENT THIS LINE OUT ===
-    # loaded_model = tf.keras.models.load_model('keras_twitter_model.h5')
+    loaded_model = tf.keras.models.load_model('keras_twitter_model.h5')
 
     return loaded_model
 
