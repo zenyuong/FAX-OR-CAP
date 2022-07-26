@@ -30,7 +30,7 @@ export default function BodyTweets() {
         body: JSON.stringify({ hashtag: query })
       })
       .then(res => {
-        if(res.data==='Request failed with status code 500'){
+        if(res.data==='Request failed with status code 400'){
           toast.error("Oops, something went wrong!", {duration: 1500});
           console.log(res.data)
         } else{
@@ -47,17 +47,21 @@ export default function BodyTweets() {
       )
   }
 
+  var showTweets = result.tweetList.slice(0, 2).map(tweet => {
+    return <p>{`"${tweet}"`}</p>
+  });
+
   return (
     <>
-      <div className="body-container">
+      <div className={"body-container"}>
       <Toaster/>
-        <div className="body-icons twitter">
+        <div className={"body-icons twitter"}>
           <img src="twitter.png" alt="twitter_logo" width="135" height="135" />
         </div>
-        <div className="input-box">
+        <div className={"input-box"}>
           <form onSubmit={handleSubmit}>
             <input
-              className="input-box-tweet"
+              className={"input-box-tweet"}
               type="text"
               size={80}
               placeholder="Enter Hashtag"
@@ -65,16 +69,19 @@ export default function BodyTweets() {
               value={inputValue}
               onChange={handleChange}
             />
-            <i className="fa-solid fa-hashtag fa-lg"></i>
-            <i onClick={handleClear} class="fa-solid fa-xmark"></i>
+            <i className={"fa-solid fa-hashtag fa-lg"}></i>
+            <i onClick={handleClear} className={"fa-solid fa-xmark"}></i>
             <br />
             <button type="submit">Check Sentiment</button>
           </form>
         </div>
         <div className={'body-content'}>
             <h1 className={'sentiment'}>
-              Hello {result.label}
+              {result.sentiment}
             </h1>
+            <div className={'tweets'}>
+              {showTweets}
+            </div>
         </div>
       </div>
     </>

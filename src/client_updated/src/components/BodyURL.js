@@ -30,9 +30,14 @@ export default function BodyURL() {
         body: JSON.stringify({ URL: Link }),
       })
       .then((res) => {
-        toast.success("Success!", { duration: 1500 });
-        console.log(res);
-        setResult(res.data);
+        if(res.data==='Request failed with status code 500'){
+          toast.error("Oops, something went wrong!", {duration: 1500});
+          console.log(res.data)
+        } else{
+            toast.success("Success!", {duration: 1500});
+            console.log(res.data)
+            setResult(res.data)
+        }
       })
       .catch((res) => {
         toast.error("Oops, something went wrong!", { duration: 1500 });
@@ -50,7 +55,7 @@ export default function BodyURL() {
         <div className={"input-box"}>
           <form onSubmit={handleSubmit}>
             <input
-              className="input-box-url"
+              className={"input-box-url"}
               type="text"
               size={80}
               placeholder="Enter URL"
@@ -58,8 +63,8 @@ export default function BodyURL() {
               value={inputValue}
               onChange={handleChange}
             />
-            <i className="fa-solid fa-link fa-lg"></i>
-            <i onClick={handleClear} class="fa-solid fa-xmark"></i>
+            <i className={"fa-solid fa-link fa-lg"}></i>
+            <i onClick={handleClear} className={"fa-solid fa-xmark"}></i>
             <br />
             <button type="submit">Check Validity</button>
           </form>
