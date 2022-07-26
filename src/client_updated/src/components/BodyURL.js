@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, {useRef, useState, useEffect} from "react";
 import { Toaster, toast } from 'react-hot-toast';
 import "./Body.css";
 import axios from "axios";
@@ -6,6 +6,17 @@ import axios from "axios";
 export default function BodyURL() {
   const URL = useRef();
   const [result, setResult] = useState([])
+  const [inputValue, setInputValue] = useState(""); 
+
+  // Use Effect
+
+  const handleClear = (e) => {
+    setInputValue('');
+  }
+
+  const handleChange = (e) => {
+    setInputValue(e.target.value);
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,9 +27,14 @@ export default function BodyURL() {
         body: JSON.stringify({ URL: Link })
       })
       .then(res => {
-          toast.success("Success!", {duration: 1500});
+        if(res.data==='Request failed with status code 500'){
+          toast.error("Oops, something went wrong!", {duration: 1500});
           console.log(res.data)
-          setResult(res.data)
+        } else{
+            toast.success("Success!", {duration: 1500});
+            console.log(res.data)
+            setResult(res.data)
+          }
         }
       )
       .catch(err => {
@@ -43,8 +59,11 @@ export default function BodyURL() {
               size={80}
               placeholder="Enter URL"
               ref={URL}
+              value={inputValue}
+              onChange={handleChange}
             />
             <i className="fa-solid fa-link fa-lg"></i>
+            <i onClick={handleClear} class="fa-solid fa-xmark"></i>
             <br />
             <button type="submit">Check Validity</button>
           </form>
