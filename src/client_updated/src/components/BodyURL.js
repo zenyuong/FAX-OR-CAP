@@ -8,7 +8,9 @@ export default function BodyURL() {
   const [result, setResult] = useState([])
   const [inputValue, setInputValue] = useState(""); 
 
-  // Use Effect
+  useEffect(() => {
+    setInputValue('')
+  },[result]);
 
   const handleClear = (e) => {
     setInputValue('');
