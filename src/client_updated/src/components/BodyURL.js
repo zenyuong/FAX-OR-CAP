@@ -42,8 +42,11 @@ export default function BodyURL() {
               size={80}
               placeholder="Enter URL"
               ref={URL}
+              value={inputValue}
+              onChange={handleChange}
             />
             <i className="fa-solid fa-link fa-lg"></i>
+            <i onClick={handleClear} class="fa-solid fa-xmark"></i>
             <br />
             <button type="submit">Check Validity</button>
           </form>

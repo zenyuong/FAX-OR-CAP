@@ -83,10 +83,24 @@
     transform: translate(-50%, -50%);
 } 
 
-.fa-solid{
+.fa-link{
     position: absolute;
     left: 1.2%;
     top: 20%;
+    color: grey;
+}
+
+.fa-hashtag{
+    position: absolute;
+    left: 1.9%;
+    top: 20%;
+    color: grey;
+}
+
+.fa-xmark{
+    position: absolute;
+    top: 13.2%;
+    right: 2%;
     color: grey;
 }
 
