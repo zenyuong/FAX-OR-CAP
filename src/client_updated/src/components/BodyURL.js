@@ -1,12 +1,11 @@
 import React, {useRef, useState} from "react";
 import { Toaster, toast } from 'react-hot-toast';
-// import "./Body.css";
 import "./Body.css";
 import axios from "axios";
 
 export default function BodyURL() {
   const URL = useRef();
-  const [result, setResult] = useState(null)
+  const [result, setResult] = useState([])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -61,7 +60,7 @@ export default function BodyURL() {
             <h3 className={'news-title'}>
               Title: {result.title}
             </h3>
-          </div>
+        </div>
       </div>
     </>
   );
