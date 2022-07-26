@@ -17,12 +17,8 @@ export default function BodyURL() {
       })
       .then(res => {
           toast.success("Success!", {duration: 1500});
-          res.json()
-        }
-      )
-      .then(output => {
-        console.log(output)
-        setResult(output.data)
+          console.log(res.data)
+          setResult(res.data)
         }
       )
       .catch(err => {
@@ -55,14 +51,13 @@ export default function BodyURL() {
         </div>
         <div className={'body-content'}>
             <h1 className={'label'}>
-              Hello
               {result.label}
             </h1>
             <h3 className={'count'}>
-              Search Count: {result.searchCount}
+              { result.searchCount !== undefined ? `Search Count: ${result.searchCount}` : "" }
             </h3>
             <h3 className={'news-title'}>
-              Title: {result.title}
+              { result.title !== undefined ? `Title: ${result.title}` : "" }
             </h3>
         </div>
       </div>

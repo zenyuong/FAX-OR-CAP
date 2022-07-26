@@ -1,37 +1,39 @@
 import React, { useRef, useState } from "react";
+import { Toaster, toast } from 'react-hot-toast';
 import "./Body.css";
 import axios from "axios";
 
 export default function BodyTweets() {
   const hashtag = useRef();
-  const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState([])
 
   // CALL TO Node.JS
   const handleSubmit = (e) => {
     e.preventDefault();
     const query = hashtag.current?.value;
-    setLoading(true);
-    let cancel;
 
     axios
       .post("http://localhost:1010/twitter/", {
         method: "POST",
-        body: JSON.stringify({ hashtag: query }),
-        cancelToken: new axios.CancelToken((c) => {
-          cancel = c;
-        }),
+        body: JSON.stringify({ hashtag: query })
       })
-      .then((res) => {
-        setLoading(false);
-        console.log(res);
-      });
-    return () => cancel();
-  };
+      .then(res => {
+          toast.success("Success!", {duration: 1500});
+          console.log(res.data)
+          setResult(res.data)
+        }
+      )
+      .catch(err => {
+          toast.error("Oops, something went wrong!", {duration: 1500});
+          console.log(err)
+        }
+      )
+  }
 
-  if (loading) return "loading...";
   return (
     <>
       <div className="body-container">
+      <Toaster/>
         <div className="body-icons twitter">
           <img src="twitter.png" alt="twitter_logo" width="135" height="135" />
         </div>
