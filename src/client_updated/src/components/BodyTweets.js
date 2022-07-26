@@ -71,6 +71,12 @@ export default function BodyTweets() {
             <button type="submit">Check Sentiment</button>
           </form>
         </div>
+        <div className={'body-content'}>
+            <h1 className={'sentiment'}>
+              Hello {result.label}
+            </h1>
+
+        </div>
       </div>
     </>
   );

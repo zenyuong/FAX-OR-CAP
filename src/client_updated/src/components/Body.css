@@ -157,7 +157,9 @@
     width: 700px;
 }
 
-.label{
+/* BODY CONTENT */
+
+.label,.sentiment{
     color: rgb(226, 219, 30);
     font-family: 'Space Mono', monospace;
 }
@@ -169,6 +171,8 @@
 .news-title{
     font-style: italic;
 }
+
+
 
 /* Animation */
 
