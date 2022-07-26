@@ -7,10 +7,12 @@ export default function BodyQueries() {
   const [queryOption, setQueryOption] = useState("recent");
 
   useEffect(() => {
-    axios.get(`http://localhost:1010/article/${queryOption}`).then((res) => {
+    axios.get(`http://localhost:1010/article/${queryOption}`)
+    .then((res) => {
       console.log(res.data);
       setQueries(res.data);
-    });
+    })
+    .catch(err => console.log(err))
   }, [queryOption]);
 
   function handleChange(e) {
