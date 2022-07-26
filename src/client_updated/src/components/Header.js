@@ -30,7 +30,7 @@ function Header() {
 
   return (
     <nav className='Navbar-container'>
-      <h1 className='navbar-logo'>FaxCap Co.</h1>
+      <img className='navbar-logo' src="FCC_logo.png" alt="FaxCap Co. logo" width="65" height="65"/>
       <div className='menu-icon' onClick={()=>setClick(!clicked)}>
         <i className={ clicked ? "fas fa-times" : "fas fa-bars"}></i>
       </div>

@@ -5,6 +5,7 @@
 }
 
 .navbar-logo{
+    margin-top: 8px;
     justify-self: start;
     cursor: default;
     font-family: 'Staatliches', cursive;
