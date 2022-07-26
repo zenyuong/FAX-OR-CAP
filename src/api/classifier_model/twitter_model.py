@@ -1,4 +1,5 @@
 from keras_preprocessing.sequence import pad_sequences
+import tensorflow as tf
 
 import nltk 
 nltk.download('stopwords')
@@ -32,7 +33,10 @@ def preprocess(text, stem=False):
 
 # === LOAD SENTIMENT ANALYSIS MODEL ===
 def load_twitter_model():
+    # === COMMENT THIS LINE OUT ===
     loaded_model = pickle.load(open('./twitter_model.sav', 'rb'))
+    # === UNCOMMENT THIS LINE OUT ===
+    # loaded_model = tf.keras.models.load_model('keras_twitter_model.h5')
 
     return loaded_model
 

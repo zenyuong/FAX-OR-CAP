@@ -6,10 +6,14 @@ export default function BodyQueries() {
   const [queryOption, setQueryOption] = useState("recent");
 
   useEffect(() => {
-    axios.get(`http://localhost:1010/article/${queryOption}`).then((res) => {
-      console.log(res.data);
-      setQueries(res.data);
-    });
+    try {
+      axios.get(`http://localhost:1010/article/${queryOption}`).then((res) => {
+        console.log(res.data);
+        setQueries(res.data);
+      });
+    } catch (e) {
+      console.log(e);
+    }
   }, [queryOption]);
 
   function change(event) {
@@ -22,6 +26,11 @@ export default function BodyQueries() {
         <option value="recent">Most Recent</option>
         <option value="popular">Most Popular</option>
       </select>
+      <ul>
+        {queries.map((query, idx) => {
+          return <li key={idx}>{query.title}</li>;
+        })}
+      </ul>
     </>
   );
 }

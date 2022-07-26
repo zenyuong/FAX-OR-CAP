@@ -1,24 +1,24 @@
-import React, { useRef, useState, useEffect} from "react";
-import { Toaster, toast } from 'react-hot-toast';
+import React, { useRef, useState, useEffect } from "react";
+import { Toaster, toast } from "react-hot-toast";
 import "./Body.css";
 import axios from "axios";
 
 export default function BodyTweets() {
   const hashtag = useRef();
-  const [result, setResult] = useState([])
+  const [result, setResult] = useState([]);
   const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
-    setInputValue('')
-  },[result]);
+    setInputValue("");
+  }, [result]);
 
   const handleClear = (e) => {
-    setInputValue('');
-  }
+    setInputValue("");
+  };
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
-  }
+  };
 
   // CALL TO Node.JS
   const handleSubmit = (e) => {
@@ -27,7 +27,7 @@ export default function BodyTweets() {
     axios
       .post("http://localhost:1010/twitter/", {
         method: "POST",
-        body: JSON.stringify({ hashtag: query })
+        body: JSON.stringify({ hashtag: query }),
       })
       .then(res => {
         if(res.data==='Request failed with status code 400'){
@@ -40,16 +40,17 @@ export default function BodyTweets() {
           }
         }
       )
-      .catch(err => {
-          toast.error("Oops, something went wrong!", {duration: 1500});
-          console.log(err)
-        }
-      )
-  }
+      .catch((err) => {
+        toast.error("Oops, something went wrong!", { duration: 1500 });
+        console.log(err);
+      });
+  };
 
-  var showTweets = result.tweetList.slice(0, 2).map(tweet => {
-    return <p>{`"${tweet}"`}</p>
-  });
+  if(result.tweetList!==undefined){
+    var showTweets = result.tweetList.slice(0,2).map(tweet => {
+      return <p>{`"${tweet}"`}</p>
+    });
+  }
 
   return (
     <>
