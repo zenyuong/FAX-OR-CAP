@@ -64,7 +64,7 @@ def twitter():
     sentiment= get_sentiment(tweetList)
     print(sentiment)
 
-    return("yes")
+    return(sentiment)
 
 
 
