@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Toaster, toast } from "react-hot-toast";
-import "./Body.css";
+import "../styles/Body.css";
 import axios from "axios";
 
 export default function BodyTweets() {
@@ -29,33 +29,32 @@ export default function BodyTweets() {
         method: "POST",
         body: JSON.stringify({ hashtag: query }),
       })
-      .then(res => {
-        if(res.data==='Request failed with status code 400'){
-          toast.error("Oops, something went wrong!", {duration: 1500});
-          console.log(res.data)
-        } else{
-            toast.success("Success!", {duration: 1500});
-            console.log(res.data)
-            setResult(res.data)
-          }
+      .then((res) => {
+        if (res.data === "Request failed with status code 400") {
+          toast.error("Oops, something went wrong!", { duration: 1500 });
+          console.log(res.data);
+        } else {
+          toast.success("Success!", { duration: 1500 });
+          console.log(res.data);
+          setResult(res.data);
         }
-      )
+      })
       .catch((err) => {
         toast.error("Oops, something went wrong!", { duration: 1500 });
         console.log(err);
       });
   };
 
-  if(result.tweetList!==undefined){
-    var showTweets = result.tweetList.slice(0,2).map(tweet => {
-      return <p>{`"${tweet}"`}</p>
+  if (result.tweetList !== undefined) {
+    var showTweets = result.tweetList.slice(0, 2).map((tweet) => {
+      return <p>{`"${tweet}"`}</p>;
     });
   }
 
   return (
     <>
       <div className={"body-container"}>
-      <Toaster/>
+        <Toaster />
         <div className={"body-icons twitter"}>
           <img src="twitter.png" alt="twitter_logo" width="135" height="135" />
         </div>
@@ -76,13 +75,9 @@ export default function BodyTweets() {
             <button type="submit">Check Sentiment</button>
           </form>
         </div>
-        <div className={'body-content'}>
-            <h1 className={'sentiment'}>
-              {result.sentiment}
-            </h1>
-            <div className={'tweets'}>
-              {showTweets}
-            </div>
+        <div className={"body-content"}>
+          <h1 className={"sentiment"}>{result.sentiment}</h1>
+          <div className={"tweets"}>{showTweets}</div>
         </div>
       </div>
     </>

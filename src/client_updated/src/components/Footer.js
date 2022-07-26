@@ -1,5 +1,5 @@
-import React from 'react'
-import './Footer.css'
+import React from "react";
+import "../styles/Footer.css";
 
 function Footer() {
   return (
@@ -7,7 +7,7 @@ function Footer() {
       <hr/>
       <p>&copy; 2022 HEAP Group 3 | All Rights Reserved</p>
     </div>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

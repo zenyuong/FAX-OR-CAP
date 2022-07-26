@@ -1,25 +1,17 @@
 import axios from "axios";
-import React, { useState, useLayoutEffect } from "react";
+import React, { useState, useEffect } from "react";
+import "../styles/Body.css";
 
 export default function BodyQueries() {
   const [queries, setQueries] = useState();
   const [queryOption, setQueryOption] = useState("recent");
 
-  useLayoutEffect(() => {
-    try {
-      axios
-        .get(`http://localhost:1010/article/${queryOption}`)
-        .then(res => {
-          console.log(res.data);
-          setQueries(res.data);
-        })
-        .catch(err =>{
-          console.log(err)
-        })
-    } catch (e) {
-      console.log(e)
-      }
-  },[queryOption])
+  useEffect(() => {
+    axios.get(`http://localhost:1010/article/${queryOption}`).then((res) => {
+      console.log(res.data);
+      setQueries(res.data);
+    });
+  }, [queryOption]);
 
   function handleChange(e) {
     setQueryOption(e.target.value);

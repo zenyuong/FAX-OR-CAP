@@ -1,25 +1,24 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Toaster, toast } from "react-hot-toast";
-// import "./Body.css";
-import "./Body.css";
+import "../styles/Body.css";
 import axios from "axios";
 
 export default function BodyURL() {
   const URL = useRef();
   const [result, setResult] = useState([]);
-  const [inputValue, setInputValue] = useState('')
+  const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
-    setInputValue('')
-  },[result]);
+    setInputValue("");
+  }, [result]);
 
   const handleClear = (e) => {
-    setInputValue('');
-  }
+    setInputValue("");
+  };
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
-  }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,13 +29,13 @@ export default function BodyURL() {
         body: JSON.stringify({ URL: Link }),
       })
       .then((res) => {
-        if(res.data==='Request failed with status code 500'){
-          toast.error("Oops, something went wrong!", {duration: 1500});
-          console.log(res.data)
-        } else{
-            toast.success("Success!", {duration: 1500});
-            console.log(res.data)
-            setResult(res.data)
+        if (res.data === "Request failed with status code 500") {
+          toast.error("Oops, something went wrong!", { duration: 1500 });
+          console.log(res.data);
+        } else {
+          toast.success("Success!", { duration: 1500 });
+          console.log(res.data);
+          setResult(res.data);
         }
       })
       .catch((res) => {
@@ -70,14 +69,14 @@ export default function BodyURL() {
           </form>
         </div>
         <div className={"body-content"}>
-          <h1 className={"label"}>
-            {result.label}
-          </h1>
+          <h1 className={"label"}>{result.label}</h1>
           <h3 className={"count"}>
-            {result.searchCount !== undefined ? `Search Count: ${result.searchCount}` : ''}
+            {result.searchCount !== undefined
+              ? `Search Count: ${result.searchCount}`
+              : ""}
           </h3>
           <h3 className={"news-title"}>
-            {result.title !== undefined ? `Title: ${result.title}` : ''}
+            {result.title !== undefined ? `Title: ${result.title}` : ""}
           </h3>
         </div>
       </div>
