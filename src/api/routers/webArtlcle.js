@@ -1,18 +1,40 @@
+//Database Schema Dependency
 const WebsiteResultRecords = require("../models/WebsiteResultRecords");
-const fs = require("fs");
+
+//Library Dependencies
 const axios = require("axios");
 const router = require("express").Router();
 
 module.exports = () => {
   router.get("/hi", (req, res) => {
     // return res.send("Start of HEAP! :D");
-    res.writeHead(200, { "Content-Type": "text/html" });
-    var dir = "./views/index.html";
-    var html = fs.readFileSync(dir);
-    res.write(html);
+
     return res.end();
   });
-
+  router.get("/recent", async (req, res) => {
+    try {
+      const webResultList = await WebsiteResultRecords.find(
+        {},
+        {},
+        { sort: { createdAt: -1 } }
+      );
+      return res.send(webResultList);
+    } catch (e) {
+      return res.send(e);
+    }
+  });
+  router.get("/popular", async (req, res) => {
+    try {
+      const webResultList = await WebsiteResultRecords.find(
+        {},
+        {},
+        { sort: { searchCount: -1 } }
+      );
+      return res.send(webResultList);
+    } catch (e) {
+      return res.send(e);
+    }
+  });
   router.post("/action", async (req, res) => {
     console.log(req.body);
     const request = JSON.parse(req.body.body);

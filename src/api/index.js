@@ -1,4 +1,7 @@
+//Environment Variables
 require("dotenv").config();
+
+//Library Dependencies
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -17,12 +20,6 @@ function initAPIServer() {
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
   app.use(cors());
-
-  app.get("/", (req, res) => {
-    console.log("hi");
-
-    return res.end();
-  });
 
   app.use("/article", require("./routers/webArtlcle")());
   app.use("/twitter", require("./routers/twitterAPI")());
