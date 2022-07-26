@@ -22,15 +22,11 @@ export default function BodyQueries() {
         <option value="recent">Most Recent</option>
         <option value="popular">Most Popular</option>
       </select>
-      <table>
+      <ul>
         {queries.map((query) => {
-          return (
-            <tr>
-              <td>{query.title}</td>
-            </tr>
-          );
+          return <li>{query.title}</li>;
         })}
-      </table>
+      </ul>
     </>
   );
 }
