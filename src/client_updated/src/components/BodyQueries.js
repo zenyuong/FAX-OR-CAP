@@ -23,8 +23,8 @@ export default function BodyQueries() {
         <option value="popular">Most Popular</option>
       </select>
       <ul>
-        {queries.map((query) => {
-          return <li>{query.title}</li>;
+        {queries.map((query, idx) => {
+          return <li key={idx}>{query.title}</li>;
         })}
       </ul>
     </>
