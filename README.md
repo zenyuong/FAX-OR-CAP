@@ -66,7 +66,7 @@ node index.js
 ```
 ### User Scenario 1: User wants to check the validity of a news piece
 1. User starts from the landing page   
-![Landing Page](https://github.com/zenyuong/HEAP-IS-FAKE-NEWS-/blob/efee5408061c944d3d14bf730a48cf20536bcafd/home_url.jpeg)  
+![Landing Page](https://github.com/zenyuong/HEAP-IS-FAKE-NEWS-/screenshots/blob/efee5408061c944d3d14bf730a48cf20536bcafd/home_url.jpeg)  
 2. User clicks on the fake news detection icon  
 3. User inserts the HTML link of their choice into the input box  
 ![Adding in a URL](https://github.com/zenyuong/HEAP-IS-FAKE-NEWS-/blob/efee5408061c944d3d14bf730a48cf20536bcafd/url_page.jpeg)  
