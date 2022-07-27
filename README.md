@@ -35,7 +35,7 @@ For the common person, discerning real from fake news comes down solely to their
     Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node. js. Used to simplify development of code for MongoDB on JavaScript. 
     - **axios**                                                                                                  
     Axios is a promised-based HTTP client for JavaScript. Used to make HTTP requests to TwitterAPI and Python Flask Service which acts as a middleman between the Express App and ML Models developed in Python. 
-    - **Twitter API**
+    - **Twitter API**                                                                                                                                                                                                              
     Made used of the twitter API to retrieve tweets based off hashtags.
 4. Machine Learning Model
     - **Tensorflow**  
