@@ -15,12 +15,8 @@ export default function BodyQueries() {
     .catch(err => console.log(err))
   }, [queryOption]);
 
-  function handleChange(e) {
-    setQueryOption(e.target.value);
-  }
-
   if(queries!==undefined){
-    let count = 0;
+    let count = 0
     var result = queries.map((query, idx) => {
       return(
         <ul>
@@ -35,10 +31,12 @@ export default function BodyQueries() {
 
   return (
     <>
-      <select className="query-selector" name="queryOption" onChange={handleChange}>
-        <option value="recent">Most Recent</option>
-        <option value="popular">Most Popular</option>
-      </select>
+      <div>
+        <select className="query-selector" name="queryOption" onChange={e=>setQueryOption(e.target.value)}>
+          <option value="recent">Most Recent</option>
+          <option value="popular">Most Popular</option>
+        </select>
+      </div>
       <div className={"queries-wrapper"}>
         <div className={"queries"}>
           {result}

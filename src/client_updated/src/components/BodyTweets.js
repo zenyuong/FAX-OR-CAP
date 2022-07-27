@@ -20,29 +20,31 @@ export default function BodyTweets() {
     setInputValue(e.target.value);
   };
 
-  // CALL TO Node.JS
   const handleSubmit = (e) => {
     e.preventDefault();
     const query = hashtag.current?.value;
-    axios
-      .post("http://localhost:1010/twitter/", {
-        method: "POST",
-        body: JSON.stringify({ hashtag: query }),
-      })
-      .then((res) => {
-        if (res.data === "Request failed with status code 400") {
-          toast.error("Oops, something went wrong!", { duration: 1500 });
-          console.log(res.data);
-        } else {
-          toast.success("Success!", { duration: 1500 });
-          console.log(res.data);
-          setResult(res.data);
-        }
-      })
-      .catch((err) => {
-        toast.error("Oops, something went wrong!", { duration: 1500 });
-        console.log(err);
-      });
+
+    const getPromise = axios.post("http://localhost:1010/twitter/", {
+      method: "POST",
+      body: JSON.stringify({ hashtag: query })
+      }).then((res) => {
+          if (res.data === "Request failed with status code 400") {
+            toast.error("Oops, something went wrong!", { duration: 1500 });
+            console.log(res.data);
+          } else {
+            console.log(res.data);
+            setResult(res.data);
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        });
+
+    toast.promise(getPromise, {
+      loading: 'Loading',
+      success: 'Got the data!',
+      error: 'Oops something went wrong!',
+    });
   };
 
   if (result.tweetList !== undefined) {

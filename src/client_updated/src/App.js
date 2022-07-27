@@ -22,7 +22,7 @@ function App() {
           <Route path="/tweets" element={<BodyTweets />} />
           <Route path="/queries" element={<BodyQueries />} />
         </Routes>
-        <Footer />
+        <Footer/>
       </div>
     </>
   );

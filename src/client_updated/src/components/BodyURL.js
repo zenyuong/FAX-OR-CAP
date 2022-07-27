@@ -12,7 +12,7 @@ export default function BodyURL() {
     setInputValue("");
   }, [result]);
 
-  const handleClear = (e) => {
+  const handleClear = () => {
     setInputValue("");
   };
 
@@ -20,11 +20,10 @@ export default function BodyURL() {
     setInputValue(e.target.value);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const Link = URL.current?.value;
-    axios
-      .post("http://localhost:1010/article/action", {
+    const getPromise = axios.post("http://localhost:1010/article/action", {
         method: "POST",
         body: JSON.stringify({ URL: Link }),
       })
@@ -33,15 +32,19 @@ export default function BodyURL() {
           toast.error("Oops, something went wrong!", { duration: 1500 });
           console.log(res.data);
         } else {
-          toast.success("Success!", { duration: 1500 });
           console.log(res.data);
           setResult(res.data);
         }
       })
       .catch((res) => {
-        toast.error("Oops, something went wrong!", { duration: 1500 });
         console.log(res);
       });
+
+    toast.promise(getPromise, {
+      loading: 'Loading',
+      success: 'Got the data!',
+      error: 'Oops something went wrong!',
+    });
   };
 
   return (
