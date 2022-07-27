@@ -28,13 +28,13 @@ For the common person, discerning real from fake news comes down solely to their
     - **ExpressJS**  
     Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. It main benefit comes from it being small and robust enough for HTTP servers hence making it a great solution for single page applications, websites or applications. 
     - **Flask**  
-    Flask is a lightweight web development framework for Python. It does not require any particular tools or libraries. We primarily used Flask as a way for our web application to interact with the Machine Learning Models which were written in Flask. 
+    Flask is a lightweight web development framework for Python. It does not require any particular tools or libraries. We primarily used Flask as a middleman for our web application to interact with the Machine Learning Models which were written in Python.
     - **MongoDB**  
     MongoDB is a source-available, cross-platform, document-oriented database platform. It is classified as a NoSQl database program. For our web applications, MongoDB was uses as our main database to store vital information about news articles.  
     - **Mongoose**                                                                                                                    
     Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node. js. Used to simplify development of code for MongoDB on JavaScript. 
     - **axios**                                                                                                  
-    Axios is a promised-based HTTP client for JavaScript. Used to make HTTP requests to TwitterAPI and Python Flask Service which acts as a middleman between the Express App and ML Models developed in Python. 
+    Axios is a promised-based HTTP client for JavaScript. Used to make HTTP requests to TwitterAPI and Python Flask service 
     - **Twitter API**                                                                                                                                                                                                              
     Made used of the twitter API to retrieve tweets based off hashtags.
 4. Machine Learning Model
