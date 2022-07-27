@@ -19,7 +19,7 @@ For the common person, discerning real from fake news comes down solely to their
     - **HTML**
     - **CSS**
     - **react-router-dom** 
-    Used to implment dynamic routing in our web application. 
+    Used to implment dynamic routing in our web application.     Used to implment dynamic routing in our web application.    Used to implment dynamic routing in our web application.    Used to implment dynamic routing in our web application.    Used to implment dynamic routing in our web application.    Used to implment dynamic routing in our web application.    Used to implment dynamic routing in our web application.    Used to implment dynamic routing in our web application.
     - **react-hot-toast**
     Used to implement pop ups to show progress status. 
 3. Backend
