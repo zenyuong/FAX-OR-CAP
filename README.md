@@ -18,8 +18,8 @@ For the common person, discerning real from fake news comes down solely to their
     ReactJS is an open-source JavaScript library that is used for building user interfaces specifically for single-page applications. React also allows us to create reusable UI components. React allowed us to create a large web applications that can change data, without reloading the page thus giving it a sense of versatility. Additionally, the main purpose of React is to be fast, scalable, and simple.
     - **HTML**
     - **CSS**
-    - **react-router-dom** 
-    Used to implment dynamic routing in our web application.     Used to implment dynamic routing in our web application.    Used to implment dynamic routing in our web application.    Used to implment dynamic routing in our web application.    Used to implment dynamic routing in our web application.    Used to implment dynamic routing in our web application.    Used to implment dynamic routing in our web application.    Used to implment dynamic routing in our web application.
+    - **react-router-dom**                                                                                                            
+    Used to implment dynamic routing in our web application. 
     - **react-hot-toast**
     Used to implement pop ups to show progress status. 
 3. Backend
