@@ -1,250 +1,264 @@
-.body-container{
-    text-align: center;
-    height: 600px;
-    position: relative;
+.body-container {
+  text-align: center;
+  height: 600px;
+  position: relative;
 }
 
 /* TITLE */
-.body-icon,.title{
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.body-icon,
+.title {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.title p, .twitter-inactive, .globe-inactive{
-    color: #ffff;
-    font-family: 'Space Mono', monospace;
+.title p,
+.twitter-inactive,
+.globe-inactive {
+  color: #ffff;
+  font-family: "Space Mono", monospace;
 }
 
-.title p:first-child{
-    margin: 0;
-    font-size: 3.5rem;
-    font-weight: 700;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid orange; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
-    animation: 
-        typing 3.5s steps(40, end),
-        blink-caret 1s step-end infinite;
+.title p:first-child {
+  margin: 0;
+  font-size: 3.5rem;
+  font-weight: 700;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 3.5s steps(40, end), blink-caret 1s step-end infinite;
 }
 
-.title p:last-child{
-    margin: 0.5rem 0 2rem 0;
-    font-size: 1.2rem;
+.title p:last-child {
+  margin: 0.5rem 0 2rem 0;
+  font-size: 1.2rem;
 }
 
 /* HOMEPAGE ICONS */
-.body-main-icons{
-    position: absolute;
-    top: 56%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
+.body-main-icons {
+  position: absolute;
+  top: 56%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
 }
 
-.body-main-icons div{
-    margin: 0 2.4rem;
+.body-main-icons div {
+  margin: 0 2.4rem;
 }
 
-.globe-icon p{
-    margin-top: 22px;
+.globe-icon p {
+  margin-top: 22px;
 }
 
 /* INDV PAGE ICONS */
-.body-icons{
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.body-icons {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.body-icons.twitter{
-    top: 27%;
+.body-icons.twitter {
+  top: 27%;
 }
 
-.twitter-active{
-    color: #00acee;
-    font-family: 'Space Mono', monospace;
+.twitter-active {
+  color: #00acee;
+  font-family: "Space Mono", monospace;
 }
 
-.globe-active{
-    color:rgb(17, 142, 17);
-    font-family: 'Space Mono', monospace;
+.globe-active {
+  color: rgb(17, 142, 17);
+  font-family: "Space Mono", monospace;
 }
 
 /* INPUT BOX */
-.input-box{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-} 
-
-.fa-link{
-    position: absolute;
-    left: 1.2%;
-    top: 20%;
-    color: grey;
+.input-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.fa-hashtag{
-    position: absolute;
-    left: 1.9%;
-    top: 20%;
-    color: grey;
+.fa-link {
+  position: absolute;
+  left: 1.2%;
+  top: 20%;
+  color: grey;
 }
 
-.fa-xmark{
-    position: absolute;
-    top: 13.2%;
-    right: 2%;
-    color: grey;
+.fa-hashtag {
+  position: absolute;
+  left: 1.9%;
+  top: 20%;
+  color: grey;
 }
 
-.input-box input{
-    border-radius: 5px;
-    border: 3.5px solid grey;
-    padding: 0.6rem 2.5rem;
-    background-color: rgb(245, 245, 245);
-    font-size: 16px;
+.fa-xmark {
+  position: absolute;
+  top: 13.2%;
+  right: 2%;
+  color: grey;
 }
 
-.input-box-url:focus{
-    outline: none; 
-    border: 3.5px solid rgb(17, 142, 17);
+.input-box input {
+  border-radius: 5px;
+  border: 3.5px solid grey;
+  padding: 0.6rem 2.5rem;
+  background-color: rgb(245, 245, 245);
+  font-size: 16px;
 }
 
-.input-box-url:focus + i{
-    color: rgb(17, 142, 17);
+.input-box-url:focus {
+  outline: none;
+  border: 3.5px solid rgb(17, 142, 17);
 }
 
-.input-box-tweet:focus{
-    outline: none; 
-    border: 3.5px solid #00acee;
+.input-box-url:focus + i {
+  color: rgb(17, 142, 17);
 }
 
-.input-box-tweet:focus + i{
-    color: #00acee;
+.input-box-tweet:focus {
+  outline: none;
+  border: 3.5px solid #00acee;
 }
 
-.input-box button{
-    color: rgb(190, 190, 190);
-    background-color: transparent;
-    margin-top: 1.4rem;
-    border-radius: 25px;
-    padding: 0.8rem 1.4rem;
-    border: 2px solid rgb(190, 190, 190);
-    font-size: 15px;
+.input-box-tweet:focus + i {
+  color: #00acee;
 }
 
-.input-box button:hover{
-    background-color: orange;
-    border: 2px solid orange;
-    color: #ffff;
-    cursor: pointer;
+.input-box button {
+  color: rgb(190, 190, 190);
+  background-color: transparent;
+  margin-top: 1.4rem;
+  border-radius: 25px;
+  padding: 0.8rem 1.4rem;
+  border: 2px solid rgb(190, 190, 190);
+  font-size: 15px;
+}
+
+.input-box button:hover {
+  background-color: orange;
+  border: 2px solid orange;
+  color: #ffff;
+  cursor: pointer;
 }
 
 /* BODY CONTENT */
-.body-content{
-    position: absolute;
-    top: 77%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #ffff;
-    width: 750px;
+.body-content {
+  position: absolute;
+  top: 77%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffff;
+  width: 750px;
 }
 
-.label,.sentiment{
-    color: rgb(226, 219, 30);
-    font-family: 'Space Mono', monospace;
+.label,
+.sentiment {
+  color: rgb(226, 219, 30);
+  font-family: "Space Mono", monospace;
 }
 
-.count{
-    color: rgb(166, 166, 166);
+.count {
+  color: rgb(166, 166, 166);
 }
 
-.news-title{
-    font-style: italic;
+.news-title {
+  font-style: italic;
 }
 
-.tweets{
-    margin: auto;
-    width: 720px;
+.tweets {
+  margin: auto;
+  width: 720px;
 }
 
-.tweets p{
-    font-size: 1rem;
-    font-style: italic;
-    color: silver;
+.tweets p {
+  font-size: 1rem;
+  font-style: italic;
+  color: silver;
 }
 
 /* QUERIES  */
-.query-selector{
-    padding: 2px;
-    border-radius: 5px;
-    border: 2px solid rgb(250, 250, 250);
-    font-size: 12px;
-    float: right;
+.query-selector {
+  padding: 2px;
+  border-radius: 5px;
+  border: 2px solid rgb(250, 250, 250);
+  font-size: 12px;
+  float: right;
 }
 
-.query-selector:hover, .query-selector:focus{
-    outline: none;
-    border: 2px solid grey;
+.query-selector:hover,
+.query-selector:focus {
+  outline: none;
+  border: 2px solid grey;
 }
 
-.queries-wrapper{
-    min-height: 600px;
+.queries-wrapper {
+  min-height: 600px;
 }
 
-.queries{
-    padding: 2rem 1rem;
+.queries {
+  padding: 2rem 1rem;
 }
 
-.queries ul{
-    list-style-type: none;
-    box-sizing: border-box;
-    margin: 10px auto;
-    padding: 0;
-    width: 85%;
-    box-sizing: border-box;
+.queries ul {
+  list-style-type: none;
+  box-sizing: border-box;
+  margin: 10px auto;
+  padding: 0;
+  width: 85%;
+  box-sizing: border-box;
 }
 
-.queries li{
-    background-color: rgb(90, 90, 90);
-    display: flex;
-    text-align: center;
-    color: #ffff;
-    padding: 6px 1rem;
-    transition: 0.3s;
-    border-radius: 15px;
+.queries li {
+  background-color: rgb(90, 90, 90);
+  text-align: center;
+  color: #ffff;
+  padding: 6px 1rem;
+  transition: 0.3s;
+  border-radius: 15px;
 }
 
-.queries li:hover{
-    transform: scaleX(1.03);
-    background-color: rgb(124, 124, 124);
+.queries li:hover {
+  transform: scaleX(1.03);
+  background-color: rgb(124, 124, 124);
 }
 
-.query-order{
-    width: 20px;
-    margin-right: 2rem;
+.query-title {
+  display: flex;
+  font-style: italic;
 }
 
-.query-title{
-    font-style: italic;
+.query-body {
+  display: flex;
 }
 
+.a {
+  text-decoration: none;
+}
 /* Animation */
 
 @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+  from {
+    width: 0;
   }
-  
+  to {
+    width: 100%;
+  }
+}
+
 /* The typewriter cursor effect */
 @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange; }
+  from,
+  to {
+    border-color: transparent;
   }
+  50% {
+    border-color: orange;
+  }
+}

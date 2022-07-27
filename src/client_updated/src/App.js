@@ -11,7 +11,7 @@ import BodyHome from "./components/BodyHome";
 import Footer from "./components/Footer";
 import BodyQueries from "./components/BodyQueries";
 
-function App() {
+export default function App() {
   return (
     <>
       <div className="container">
@@ -22,10 +22,8 @@ function App() {
           <Route path="/tweets" element={<BodyTweets />} />
           <Route path="/queries" element={<BodyQueries />} />
         </Routes>
-        <Footer/>
+        <Footer />
       </div>
     </>
   );
 }
-
-export default App;

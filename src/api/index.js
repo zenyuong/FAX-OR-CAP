@@ -21,7 +21,7 @@ function initAPIServer() {
   app.use(express.json());
   app.use(cors());
 
-  app.use("/article", require("./routers/webArtlcle")());
+  app.use("/article", require("./routers/webArticle")());
   app.use("/twitter", require("./routers/twitterAPI")());
 
   let listener = app.listen(process.env.PORT || 1010, () => {

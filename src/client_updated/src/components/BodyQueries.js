@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../styles/Body.css";
 
 export default function BodyQueries() {
@@ -17,15 +18,27 @@ export default function BodyQueries() {
   }, [queryOption]);
 
   if (queries !== undefined) {
-    let count = 0;
     var result = queries.map((query, idx) => {
+      let h;
+      if (queryOption === "recent") {
+        let [date, time] = query.updatedAt.split("T");
+        time = time.substring(0, time.indexOf("."));
+        h = `Last Searched: ${date} ${time}`;
+      } else {
+        h = `Searched By: ${query.searchCount} others`;
+      }
       return (
-        <ul>
-          <li key={idx}>
-            <span className="query-order">{(count += 1)}</span>
-            <span className="query-title">{`"${query.title}"`}</span>
-          </li>
-        </ul>
+        <a href={query.link} key={idx} className="a">
+          <ul>
+            <li>
+              <span className="query-title">{`${idx + 1}) "${
+                query.title
+              }"`}</span>
+              <p className="query-title">{`Label: ${query.label}`}</p>
+              <p className="query-body">{h}</p>
+            </li>
+          </ul>
+        </a>
       );
     });
   }

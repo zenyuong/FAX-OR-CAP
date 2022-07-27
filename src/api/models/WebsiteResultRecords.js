@@ -25,8 +25,6 @@ const websiteResultRecordsSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  positiveWords: [String],
-  negativeWords: [String],
   createdAt: {
     type: Date,
     default: () => Date.now(),

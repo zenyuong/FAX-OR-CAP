@@ -16,7 +16,7 @@ module.exports = () => {
       const webResultList = await WebsiteResultRecords.find(
         {},
         {},
-        { sort: { createdAt: -1 } }
+        { sort: { updatedAt: -1 } }
       );
       return res.send(webResultList);
     } catch (e) {
@@ -46,30 +46,32 @@ module.exports = () => {
       });
       console.log("nihao", webResultRecordCheck);
       if (webResultRecordCheck === null) {
-        console.log("empty");
-
         try {
           const response = await axios.post(
             "http://127.0.0.1:2020/web_article/results",
             { url: url }
           );
-          console.log(response.data);
           const info = response.data;
+          console.log("hihi", response.data);
           info["searchCount"] = 1;
           const msg = `${url} is ${info.label}`;
           const websiteResultRecord = await WebsiteResultRecords.create(info);
           console.log(websiteResultRecord);
-          return res.send(msg);
+          return res.send(websiteResultRecord);
         } catch (e) {
           console.log(e.message);
           return res.send(e.message);
         }
       } else {
-        console.log("hi");
         try {
           const updateCount = await WebsiteResultRecords.findByIdAndUpdate(
             { _id: webResultRecordCheck._id },
-            { searchCount: webResultRecordCheck.searchCount + 1 }
+            {
+              $set: {
+                searchCount: webResultRecordCheck.searchCount + 1,
+                updatedAt: Date.now(),
+              },
+            }
           );
           console.log(updateCount);
           return res.send(webResultRecordCheck);

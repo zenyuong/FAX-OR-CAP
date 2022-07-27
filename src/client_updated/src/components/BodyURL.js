@@ -23,16 +23,17 @@ export default function BodyURL() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const Link = URL.current?.value;
-    const getPromise = axios.post("http://localhost:1010/article/action", {
+    const getPromise = axios
+      .post("http://localhost:1010/article/action", {
         method: "POST",
         body: JSON.stringify({ URL: Link }),
       })
       .then((res) => {
         if (res.data === "Request failed with status code 500") {
           toast.error("Oops, something went wrong!", { duration: 1500 });
-          console.log(res.data);
+          console.log("Over Here", res.data);
         } else {
-          console.log(res.data);
+          console.log("Over Here", res.data);
           setResult(res.data);
         }
       })
@@ -41,9 +42,9 @@ export default function BodyURL() {
       });
 
     toast.promise(getPromise, {
-      loading: 'Loading',
-      success: 'Got the data!',
-      error: 'Oops something went wrong!',
+      loading: "Loading",
+      success: "Got the data!",
+      error: "Oops something went wrong!",
     });
   };
 
