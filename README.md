@@ -1,4 +1,5 @@
 # FAX or CAP
+:shipit: Credits to: @ArthurNiah, @maegancp, @Seanabuklau, @zenyuong :shipit:
 
 ## Problem Statement 
 Consumption of information on the internet can act as a double-edged sword. On one hand, it is easy to access, low cost, and can be disseminated rapidly to anyone else with access. On the other hand, for the exact same reasons, it enables the wide spread of **Fake News**! The extensive spread of fake news leads to extremely negative effects on individuals and society. Therefore, to protect our friends and families from its effects, the ability to accurately differentiate between reliable and fake news becomes an important topic. 
