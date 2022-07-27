@@ -20,7 +20,7 @@ For the common person, discerning real from fake news comes down solely to their
     - **CSS**
     - **react-router-dom**                                                                                                            
     Used to implment dynamic routing in our web application. 
-    - **react-hot-toast**
+    - **react-hot-toast**                                                                                                                 
     Used to implement pop ups to show progress status. 
 3. Backend
     - **NodeJS**  
@@ -31,9 +31,9 @@ For the common person, discerning real from fake news comes down solely to their
     Flask is a lightweight web development framework for Python. It does not require any particular tools or libraries. We primarily used Flask as a way for our web application to interact with the Machine Learning Models which were written in Flask. 
     - **MongoDB**  
     MongoDB is a source-available, cross-platform, document-oriented database platform. It is classified as a NoSQl database program. For our web applications, MongoDB was uses as our main database to store vital information about news articles.  
-    - **Mongoose** 
+    - **Mongoose**                                                                                                                    
     Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node. js. Used to simplify development of code for MongoDB on JavaScript. 
-    - **axios** 
+    - **axios**                                                                                                  
     Axios is a promised-based HTTP client for JavaScript. Used to make HTTP requests to TwitterAPI and Python Flask Service which acts as a middleman between the Express App and ML Models developed in Python. 
     - **Twitter API**
     Made used of the twitter API to retrieve tweets based off hashtags.
