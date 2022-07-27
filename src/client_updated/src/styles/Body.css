@@ -185,17 +185,16 @@
 
 /* QUERIES  */
 .query-selector {
-  padding: 2px;
+  color: #ffff;
+  margin-left: 1130px;
+  padding: 7px;
   border-radius: 5px;
-  border: 2px solid rgb(250, 250, 250);
-  font-size: 12px;
-  float: right;
+  background-color: grey;
 }
 
 .query-selector:hover,
 .query-selector:focus {
   outline: none;
-  border: 2px solid grey;
 }
 
 .queries-wrapper {
@@ -226,7 +225,8 @@
 
 .queries li:hover {
   transform: scaleX(1.03);
-  background-color: rgb(124, 124, 124);
+  /* background-color: rgb(124, 124, 124); */
+  background-color: orange;
 }
 
 .query-title {
