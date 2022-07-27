@@ -25,7 +25,9 @@ For the common person, discerning real from fake news comes down solely to their
     - **Flask**  
     Flask is a lightweight web development framework for Python. It does not require any particular tools or libraries. We primarily used Flask as a way for our web application to interact with the Machine Learning Models which were written in Flask. 
     - **MongoDB**  
-    MongoDB is a source-available, cross-platform, document-oriented database platform. It is classified as a NoSQl database program. For our web applications, MongoDB was uses as our main database to store vital information about news articles.
+    MongoDB is a source-available, cross-platform, document-oriented database platform. It is classified as a NoSQl database program. For our web applications, MongoDB was uses as our main database to store vital information about news articles.  
+    - **Twitter API**
+    Made used of the twitter API to retrieve tweets based off hashtags.
 4. Machine Learning Model
     - **Tensorflow**  
     TensorFlow is a free and open-source software library for machine learning and artificial intelligence. For this project, it was primarily used for its text preprocessing capabilities along with its interfaces for training in deep neural networks.
