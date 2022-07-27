@@ -18,14 +18,23 @@ For the common person, discerning real from fake news comes down solely to their
     ReactJS is an open-source JavaScript library that is used for building user interfaces specifically for single-page applications. React also allows us to create reusable UI components. React allowed us to create a large web applications that can change data, without reloading the page thus giving it a sense of versatility. Additionally, the main purpose of React is to be fast, scalable, and simple.
     - **HTML**
     - **CSS**
+    - **react-router-dom** 
+    Used to implment dynamic routing in our web application. 
+    - **react-hot-toast**
+    Used to implement pop ups to show progress status. 
 3. Backend
     - **NodeJS**  
+    NodeJS is an open source development platform for executing JavaScript code server-side, useful for developing applications that require a persistent connection form the browser to the server. 
     - **ExpressJS**  
     Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. It main benefit comes from it being small and robust enough for HTTP servers hence making it a great solution for single page applications, websites or applications. 
     - **Flask**  
     Flask is a lightweight web development framework for Python. It does not require any particular tools or libraries. We primarily used Flask as a way for our web application to interact with the Machine Learning Models which were written in Flask. 
     - **MongoDB**  
     MongoDB is a source-available, cross-platform, document-oriented database platform. It is classified as a NoSQl database program. For our web applications, MongoDB was uses as our main database to store vital information about news articles.  
+    - **Mongoose** 
+    Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node. js. Used to simplify development of code for MongoDB on JavaScript. 
+    - **axios** 
+    Axios is a promised-based HTTP client for JavaScript. Used to make HTTP requests to TwitterAPI and Python Flask Service which acts as a middleman between the Express App and ML Models developed in Python. 
     - **Twitter API**
     Made used of the twitter API to retrieve tweets based off hashtags.
 4. Machine Learning Model
@@ -50,7 +59,7 @@ To get the application up and working you'll have to run three files on three se
 1. Flask file: middle.py  
 ``` 
 cd src/api/classifier_model/
-python3 middle.py 
+python3 middle.py OR py middle.py OR python middle.py 
 ```
 
 2. React file: App.js  
