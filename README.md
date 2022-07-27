@@ -64,20 +64,18 @@ node index.js
 ```
 ### User Scenario 1: User wants to check the validity of a news piece
 1. User starts from the landing page   
-**Insert Landing Page here**  
+![Landing Page](https://github.com/zenyuong/HEAP-IS-FAKE-NEWS-/blob/efee5408061c944d3d14bf730a48cf20536bcafd/home_url.jpeg)  
 2. User clicks on the fake news detection icon  
-**Insert user clicking on Fake News Icon**  
 3. User inserts the HTML link of their choice into the input box  
-**Insert picture of user adding in a link into the input box**  
+![Adding in a URL](https://github.com/zenyuong/HEAP-IS-FAKE-NEWS-/blob/efee5408061c944d3d14bf730a48cf20536bcafd/url_page.jpeg)  
 4. The user gets greeted with a results page with whether the new is reliable along with keywords that might contribute to the result  
-**Insert result page**  
+![URL result](https://github.com/zenyuong/HEAP-IS-FAKE-NEWS-/blob/efee5408061c944d3d14bf730a48cf20536bcafd/url_result.jpeg)  
 
 ### User Scenario 2: User checks for the sentiment analysis of a tweet
-1. User starts from the landing page and wants to find the general sentiment of a particular hashtag  
-**Insert Landing Page here**  
+1. User starts from the landing page and wants to find the general sentiment of a particular hashtag   
 2. User clicks on the Twitter Icon  
-**Insert user clicking on Twitter Icon**  
+![Landing Page](https://github.com/zenyuong/HEAP-IS-FAKE-NEWS-/blob/efee5408061c944d3d14bf730a48cf20536bcafd/home_twitter.png)  
 3. User inserts the hashtag of their choice into the input box  
-**Insert picture of user adding in a hashtag into the input box**  
+![Twitter Page](https://github.com/zenyuong/HEAP-IS-FAKE-NEWS-/blob/efee5408061c944d3d14bf730a48cf20536bcafd/twitter_page.jpeg)  
 4. The user gets greeted with a results page with infomation on whether the sentiment on the tweet  
-**Insert result page**  
+![Twitter Result](https://github.com/zenyuong/HEAP-IS-FAKE-NEWS-/blob/efee5408061c944d3d14bf730a48cf20536bcafd/twitter_result.jpeg)  
