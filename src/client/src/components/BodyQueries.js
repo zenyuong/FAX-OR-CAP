@@ -44,7 +44,7 @@ export default function BodyQueries() {
 
   return (
     <>
-      <div>
+      <div className="queries-wrapper">
         <select
           className="query-selector"
           name="queryOption"
@@ -53,8 +53,6 @@ export default function BodyQueries() {
           <option value="recent">Most Recent</option>
           <option value="popular">Most Popular</option>
         </select>
-      </div>
-      <div className={"queries-wrapper"}>
         <div className={"queries"}>{result}</div>
       </div>
     </>

@@ -11,7 +11,7 @@ For the common person, discerning real from fake news comes down solely to their
 ![Architecture Diagram](https://github.com/zenyuong/HEAP-IS-FAKE-NEWS-/blob/691d63c4dfe365b8ae0cfa9c75385ff1d86fe8ae/User%20Input.jpeg)
 ### Tech-Stack
 1. Languages used
-    - **Python**
+    - **Python** 
     - **Javascript**
 2. Frontend
     - **ReactJS**  
@@ -28,13 +28,13 @@ For the common person, discerning real from fake news comes down solely to their
     - **ExpressJS**  
     Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. It main benefit comes from it being small and robust enough for HTTP servers hence making it a great solution for single page applications, websites or applications. 
     - **Flask**  
-    Flask is a lightweight web development framework for Python. It does not require any particular tools or libraries. We primarily used Flask as a way for our web application to interact with the Machine Learning Models which were written in Flask. 
+    Flask is a lightweight web development framework for Python. It does not require any particular tools or libraries. We primarily used Flask as a middleman for our web application to interact with the Machine Learning Models which were written in Python.
     - **MongoDB**  
     MongoDB is a source-available, cross-platform, document-oriented database platform. It is classified as a NoSQl database program. For our web applications, MongoDB was uses as our main database to store vital information about news articles.  
     - **Mongoose**                                                                                                                    
     Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node. js. Used to simplify development of code for MongoDB on JavaScript. 
     - **axios**                                                                                                  
-    Axios is a promised-based HTTP client for JavaScript. Used to make HTTP requests to TwitterAPI and Python Flask Service which acts as a middleman between the Express App and ML Models developed in Python. 
+    Axios is a promised-based HTTP client for JavaScript. Used to make HTTP requests to TwitterAPI and Python Flask service 
     - **Twitter API**                                                                                                                                                                                                              
     Made used of the twitter API to retrieve tweets based off hashtags.
 4. Machine Learning Model
@@ -75,8 +75,9 @@ node index.js
 ```
 ### User Scenario 1: User wants to check the validity of a news piece
 1. User starts from the landing page   
-![Landing Page](https://github.com/zenyuong/HEAP-IS-FAKE-NEWS-/blob/efee5408061c944d3d14bf730a48cf20536bcafd/home_url.jpeg)  
+![Landing Page](https://github.com/zenyuong/FAX-OR-CAP/blob/main/screenshots/home.jpeg)  
 2. User clicks on the fake news detection icon  
+![Select URL](https://github.com/zenyuong/FAX-OR-CAP/blob/main/screenshots/home_url.png)  
 3. User inserts the HTML link of their choice into the input box  
 ![Adding in a URL](https://github.com/zenyuong/HEAP-IS-FAKE-NEWS-/blob/efee5408061c944d3d14bf730a48cf20536bcafd/url_page.jpeg)  
 4. The user gets greeted with a results page with whether the new is reliable along with keywords that might contribute to the result  
@@ -84,6 +85,7 @@ node index.js
 
 ### User Scenario 2: User checks for the sentiment analysis of a tweet
 1. User starts from the landing page and wants to find the general sentiment of a particular hashtag   
+![Landing Page](https://github.com/zenyuong/FAX-OR-CAP/blob/main/screenshots/home.jpeg) 
 2. User clicks on the Twitter Icon  
 ![Landing Page](https://github.com/zenyuong/HEAP-IS-FAKE-NEWS-/blob/efee5408061c944d3d14bf730a48cf20536bcafd/home_twitter.png)  
 3. User inserts the hashtag of their choice into the input box  
